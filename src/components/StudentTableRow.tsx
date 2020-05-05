@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 
-export default class StudentTableRow extends Component {
+export default class StudentTableRow extends React.Component<any, any> {
 
-    constructor(props) {
+    constructor(props: any) {
         super(props);
         this.deleteStudent = this.deleteStudent.bind(this);
     }

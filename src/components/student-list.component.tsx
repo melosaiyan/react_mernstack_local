@@ -1,12 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import axios from 'axios';
 import Table from 'react-bootstrap/Table';
 import StudentTableRow from './StudentTableRow';
 
 
-export default class StudentList extends Component {
+export default class StudentList extends React.Component<any, any> {
 
-  constructor(props) {
+  constructor(props: any) {
     super(props)
     this.state = {
       students: []
@@ -26,7 +26,7 @@ export default class StudentList extends Component {
   }
 
   DataTable() {
-    return this.state.students.map((res, i) => {
+    return this.state.students.map((res: any, i: string | number | undefined) => {
       return <StudentTableRow obj={res} key={i} />;
     });
   }

@@ -66,7 +66,7 @@ export default class CreateStudent extends React.Component<any, any> {
           <Form.Control type="text" value={this.state.rollno} onChange={this.onChangeStudentRollno}/>
         </Form.Group>
 
-        <Button variant="danger" size="lg" block type="submit">
+        <Button variant="danger" size="lg" type="submit" block>
           Create Student
         </Button>
       </Form>
