@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-#My MERNSTACK Project (Using MongoDB, Express.js/Axios, React, & Node.js)
+# My MERNSTACK Project (Using MongoDB, Express.js/Axios, React, & Node.js)
 
 MongoDB is required to get this project to run. I used docker to get a MongoDB instance:
 
