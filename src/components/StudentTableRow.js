@@ -18,13 +18,6 @@ export default class StudentTableRow extends Component {
             }).catch((error) => {
                 console.log(error)
             })
-        
-            // axios.get('http://localhost:4000/students/student-list/')
-            // .then((res) => {
-            //     console.log('Redirection complete')
-            // }).catch((error) => {
-            //     console.log(error)
-            // })
     }
 
     render() {
