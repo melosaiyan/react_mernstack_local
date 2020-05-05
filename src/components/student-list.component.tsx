@@ -1,7 +1,7 @@
-import React from "react";
-import axios from 'axios';
-import Table from 'react-bootstrap/Table';
-import StudentTableRow from './StudentTableRow';
+import React from "react"
+import axios from 'axios'
+import Table from 'react-bootstrap/Table'
+import StudentTableRow from './StudentTableRow'
 
 
 export default class StudentList extends React.Component<any, any> {

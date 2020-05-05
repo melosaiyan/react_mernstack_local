@@ -1,7 +1,7 @@
 const mongooseStudent = require('mongoose');
 const Schema = mongooseStudent.Schema;
 
-let studentSchemaPrime = new Schema({
+const studentSchemaPrime = new Schema({
   name: {
     type: String
   },

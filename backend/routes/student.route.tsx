@@ -1,5 +1,5 @@
-let expressRoute = require('express');
-let router = expressRoute.Router();
+const expressRoute = require('express')
+const router = expressRoute.Router()
 
 
 // Student Model
@@ -46,7 +46,7 @@ router.route('/update-student/:id').put((req, res, next) => {
     $set: req.body
   }, (error, data) => {
     if (error) {
-      return next(error);
+      return next(error)
       console.log(error)
     } else {
       res.json(data)
@@ -59,7 +59,7 @@ router.route('/update-student/:id').put((req, res, next) => {
 router.route('/delete-student/:id').delete((req, res, next) => {
   studentSchema.findByIdAndRemove(req.params.id, (error, data) => {
     if (error) {
-      return next(error);
+      return next(error)
     } else {
       res.status(200).json({
         msg: data
@@ -68,4 +68,4 @@ router.route('/delete-student/:id').delete((req, res, next) => {
   })
 })
 
-module.exports = router;
+module.exports = router
