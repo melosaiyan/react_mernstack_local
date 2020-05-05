@@ -1,5 +1,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+#My MERNSTACK Project (Using MongoDB, Express.js/Axios, React, & Node.js)
+
+MongoDB is required to get this project to run. I used docker to get a MongoDB instance:
+
+docker run --name mern-mongodb -d mongo:4.2.6
+
+Update `backend/database/db.js` with correct hostname. To find IP address:
+
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mern-mongodb
+
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -66,5 +77,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
-Added updates
