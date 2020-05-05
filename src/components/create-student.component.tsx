@@ -1,11 +1,11 @@
-import React, {Component} from "react";
+import React from "react";
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 
-export default class CreateStudent extends Component {
+export default class CreateStudent extends React.Component<any, any> {
 
-  constructor(props) {
+  constructor(props: any) {
     super(props)
 
     // Setting up functions
@@ -22,19 +22,19 @@ export default class CreateStudent extends Component {
     }
   }
 
-  onChangeStudentName(e) {
+  onChangeStudentName(e: any) {
     this.setState({name: e.target.value})
   }
 
-  onChangeStudentEmail(e) {
+  onChangeStudentEmail(e: any) {
     this.setState({email: e.target.value})
   }
 
-  onChangeStudentRollno(e) {
+  onChangeStudentRollno(e: any) {
     this.setState({rollno: e.target.value})
   }
 
-  onSubmit(e) {
+  onSubmit(e: any) {
     e.preventDefault()
 
     const studentObject = {
@@ -66,7 +66,7 @@ export default class CreateStudent extends Component {
           <Form.Control type="text" value={this.state.rollno} onChange={this.onChangeStudentRollno}/>
         </Form.Group>
 
-        <Button variant="danger" size="lg" block="block" type="submit">
+        <Button variant="danger" size="lg" block type="submit">
           Create Student
         </Button>
       </Form>
