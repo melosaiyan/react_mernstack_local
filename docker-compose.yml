@@ -14,8 +14,8 @@ services:
     - CHOKIDAR_USEPOLLING=true
     stdin_open: true
     tty: true
-  mongo-db:
-    container_name: mongo-db
+  mongo:
+    container_name: mongo
     image: mongo:4.4.1
     ports:
     - "27017:27017"

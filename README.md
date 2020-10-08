@@ -40,7 +40,7 @@ The project is ready to be deployed via Docker. Best results with Docker-Compose
 
 To run via Docker-Compose, bring up mongodb first:
 
-`docker-compose up -d mongo-db`
+`docker-compose up -d mongo`
 
 Then bring up the node app:
 
