@@ -37,6 +37,8 @@ export default class CreateStudent extends React.Component<any, any> {
   onSubmit(e: any) {
     e.preventDefault()
 
+    console.log("Test Reload")
+
     const studentObject = {
       name: this.state.name,
       email: this.state.email,
@@ -52,7 +54,7 @@ export default class CreateStudent extends React.Component<any, any> {
     return (<div className="form-wrapper">
       <Form onSubmit={this.onSubmit}>
         <Form.Group controlId="Name">
-          <Form.Label>Name</Form.Label>
+          <Form.Label>NameS</Form.Label>
           <Form.Control type="text" value={this.state.name} onChange={this.onChangeStudentName}/>
         </Form.Group>
 

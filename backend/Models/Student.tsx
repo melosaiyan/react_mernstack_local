@@ -14,5 +14,5 @@ const studentSchemaPrime = new Schema({
 }, {
     collection: 'students'
   })
-
+  
 module.exports = mongooseStudent.model('Student', studentSchemaPrime)

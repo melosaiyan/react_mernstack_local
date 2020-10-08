@@ -16,4 +16,4 @@ RUN chown -R 1001:1001 /app
 
 USER 1001
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "node-app"]

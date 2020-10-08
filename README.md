@@ -2,14 +2,66 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # My MERNSTACK Project (Using MongoDB, Express.js/Axios, React, & Node.js)
 
-MongoDB is required to get this project to run. I used docker to get a MongoDB instance:
+## This app is based on the MERN Stack tutorial linked below
 
-`docker run --name mern-mongodb -d mongo:4.2.6`
+https://www.positronx.io/react-mern-stack-crud-app-tutorial/
 
-Update `backend/database/db.js` with correct hostname. To find IP address:
+## Some PSAs
+
+### Node.js and NPM required!
+
+Duh. Have at least Node 10+ and NPM 6.x
+
+### This project is Docker-ready
+
+If wanting to run a standard Node.js server, update `backend/database/db.tsx` to use `localhost` or an IP address.
+
+### MongoDB
+
+MongoDB is required to get this project to run. I used docker to get a MongoDB instance (standard node deployment and standalone docker deployment ONLY):
+
+`docker run --name mern-mongodb -d mongo:4.4.1`
+
+### MongoDB IP Address in Docker
+
+Update `backend/database/db.tsx` with correct hostname. To find IP address:
 
 `docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mern-mongodb`
 
+## To Deploy This App
+
+First, create the node_modules for the root and the `backend` directory:
+
+`npm i && cd backend && npm i`
+
+### Docker edition
+
+The project is ready to be deployed via Docker. Best results with Docker-Compose. There are a couple options for Dockerfile, Dockerfile.centos and Dockerfile.rhel. centos uses a centos base image and rhel uses a rhel8 base image (requires redhat subscription). Default is rhel.
+
+To run via Docker-Compose, bring up mongodb first:
+
+`docker-compose up -d mongo-db`
+
+Then bring up the node app:
+
+`docker-compose up web`
+
+This project can be run with just Docker as well (may need to verify if port 4000 needs exposed)
+
+`docker build -t mernstack:dev .`
+
+Then create a new node instance (the -v option mounts to local codebase and the -e option checks for any changes to codebase; ideal for development. Leave both options out if just wanting a regular container):
+
+`docker run -it --rm  -v ${PWD}:/app -v /app/node_modules -p 3000:3000 -e CHOKIDAR_USEPOLLING=true mernstack:dev`
+
+### Standard edition
+
+To run with just node, update `backend/database/db.tsx` to use `localhost` or an IP address. Have a mongodb instance running (local install or docker container), then run the following command:
+
+`npm run node-app`
+
+
+# Standard React README info
 
 ## Available Scripts
 
@@ -77,7 +129,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
-### This app is based on the MERN Stack tutorial linked below
-
-https://www.positronx.io/react-mern-stack-crud-app-tutorial/
