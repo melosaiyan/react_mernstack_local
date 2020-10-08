@@ -1,4 +1,4 @@
-FROM registry.redhat.io/openshift3/nodejs-010-rhel7
+FROM registry.access.redhat.com/openshift3/nodejs-010-rhel7
 
 USER root
 
