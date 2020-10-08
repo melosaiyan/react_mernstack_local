@@ -11,7 +11,6 @@ spec:
     git:
       uri: https://github.com/melosaiyan/react_mernstack_local.git
       ref: openshift
-    contextDir: app
   output:
     to:
       kind: DockerImage
