@@ -1,4 +1,5 @@
-FROM registry.access.redhat.com/openshift3/nodejs-010-rhel7
+# For use with Openshift 3.11
+FROM registry.access.redhat.com/rhscl/nodejs-10-rhel7
 
 USER root
 
