@@ -8,11 +8,9 @@ const createError = require('http-errors')
 // Express Route
 const studentRoute = require('../backend/routes/student.route.tsx')
 
-const mongoURL = process.env.REACT_APP_OPENSHIFT_MONGO_URL
-
 // Connecting mongoDB Database
 mongoose.Promise = global.Promise
-mongoose.connect(mongoURL, {
+mongoose.connect(dbConfig.db, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false

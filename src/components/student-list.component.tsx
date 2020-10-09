@@ -14,7 +14,7 @@ export default class StudentList extends React.Component<any, any> {
   }
 
   componentDidMount() {
-    axios.get(process.env.REACT_APP_OPENSHIFT_HOSTNAME + '/students/')
+    axios.get(process.env.REACT_APP_HOSTNAME + '/students/')
       .then(res => {
         this.setState({
           students: res.data

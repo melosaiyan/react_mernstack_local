@@ -1,7 +1,11 @@
+backend/node_modules
 node_modules
 build
+openshift
+
 .dockerignore
 Dockerfile
 Dockerfile.centos
 Dockerfile.rhel
 Dockerfile.prod
+docker-compose.yml

@@ -46,19 +46,26 @@ Then bring up the node app:
 
 `docker-compose up web`
 
+NOTE: If running on a remote server, update the `docker-compose.yml` file and update environment variables!
+
 This project can be run with just Docker as well (may need to verify if port 4000 needs exposed)
 
 `docker build -t mernstack:dev .`
 
 Then create a new node instance (the -v option mounts to local codebase and the -e option checks for any changes to codebase; ideal for development. Leave both options out if just wanting a regular container):
 
-`docker run -it --rm  -v ${PWD}:/app -v /app/node_modules -p 3000:3000 -e CHOKIDAR_USEPOLLING=true mernstack:dev`
+`docker run -it --rm  -v ${PWD}:/app -v /app/node_modules -p 3000:3000 -e CHOKIDAR_USEPOLLING=true -e REACT_APP_MONGO_URL=mongodb://mongo:27017 - e REACT_APP_HOSTNAME=http://localhost:4000 mernstack:dev`
 
 ### Standard edition
 
-To run with just node, update `backend/database/db.tsx` to use `localhost` or an IP address. Have a mongodb instance running (local install or docker container), then run the following command:
+To run with just node, set environment variables for `REACT_APP_MONGO_DB` and `REACT_APP_HOSTNAME` to match the environment you're in (e.g. in a linux system, do `export REACT_APP_HOSTNAME=https://localhost:4000 && export REACT_APP_MONGO_DB=mongodb://mongo:27017`; in Windows, search for `Edit Environment Variables` and add variable and value). After having a mongodb instance running (local install or docker container), then run the following command:
 
 `npm run node-app`
+
+### TODOs
+
+* Find easy way to set environment variables for standard node.js deployment (use .env file?)
+* Add HTTPS support (works in Openshift without changing code)
 
 
 # Standard React README info

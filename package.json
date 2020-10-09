@@ -45,6 +45,9 @@
     ]
   },
   "jest": {
-      "testEnvironment": "node"
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2"
   }
 }
