@@ -8,7 +8,7 @@ const createError = require('http-errors')
 // Express Route
 const studentRoute = require('../backend/routes/student.route.tsx')
 
-const mongoURL = process.env.OPENSHIFT_MONGO_URL
+const mongoURL = process.env.REACT_APP_OPENSHIFT_MONGO_URL
 
 // Connecting mongoDB Database
 mongoose.Promise = global.Promise
