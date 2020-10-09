@@ -17,4 +17,6 @@ RUN chown -R 1001:1001 /app
 
 USER 1001
 
+EXPOSE 3000 4000
+
 CMD ["npm", "run", "node-app"]
