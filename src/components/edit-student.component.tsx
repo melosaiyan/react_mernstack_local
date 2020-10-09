@@ -22,7 +22,7 @@ export default class EditStudent extends React.Component<any, any> {
   }
 
   componentDidMount() {
-    axios.get(process.env.REACT_APP_ROUTE + '/students/edit-student/' + this.props.match.params.id)
+    axios.get(process.env.REACT_APP_ROUTE + '/edit-student/' + this.props.match.params.id)
       .then(res => {
         this.setState({
           name: res.data.name,
