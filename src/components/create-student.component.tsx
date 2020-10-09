@@ -39,6 +39,7 @@ export default class CreateStudent extends React.Component<any, any> {
 
     console.log("Test Reload")
     console.log(process.env.REACT_APP_OPENSHIFT_MONGO_URL)
+    console.log(process.env.REACT_APP_ROUTE)
 
     const studentObject = {
       name: this.state.name,
