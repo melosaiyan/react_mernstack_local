@@ -45,7 +45,7 @@ export default class CreateStudent extends React.Component<any, any> {
       email: this.state.email,
       rollno: this.state.rollno
     };
-    axios.post('http://reactmernstacklocal-brian-test.devapps.c3ms.org:4000/student-list', studentObject)
+    axios.post('http://reactmernstacklocal-brian-test.devapps.c3ms.org/student-list', studentObject)
       .then(res => console.log(res.data));
 
     this.setState({name: '', email: '', rollno: ''})

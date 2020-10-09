@@ -11,7 +11,7 @@ export default class StudentTableRow extends React.Component<any, any> {
     }
 
     deleteStudent() {
-        axios.delete('https://reactmernstacklocal-brian-test.devapps.c3ms.org:4000/students/delete-student/' + this.props.obj._id)
+        axios.delete('http://reactmernstacklocal-brian-test.devapps.c3ms.org:4000/students/delete-student/' + this.props.obj._id)
             .then((res) => {
                 console.log('Student successfully deleted!')
                 window.location.href = '/student-list'
