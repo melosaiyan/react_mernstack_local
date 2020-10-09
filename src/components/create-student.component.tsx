@@ -39,14 +39,14 @@ export default class CreateStudent extends React.Component<any, any> {
 
     console.log("Test Reload")
     console.log(process.env.REACT_APP_OPENSHIFT_MONGO_URL)
-    console.log(process.env.REACT_APP_ROUTE)
+    console.log(process.env.REACT_APP_OPENSHIFT_HOSTNAME)
 
     const studentObject = {
       name: this.state.name,
       email: this.state.email,
       rollno: this.state.rollno
     };
-    axios.post(process.env.REACT_APP_ROUTE + '/create-student', studentObject)
+    axios.post(process.env.REACT_APP_OPENSHIFT_HOSTNAME + '/students/create-student', studentObject)
       .then(res => console.log(res.data));
 
     this.setState({name: '', email: '', rollno: ''})

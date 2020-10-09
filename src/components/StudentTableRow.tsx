@@ -11,7 +11,7 @@ export default class StudentTableRow extends React.Component<any, any> {
     }
 
     deleteStudent() {
-        axios.delete(process.env.REACT_APP_ROUTE + '/delete-student/' + this.props.obj._id)
+        axios.delete(process.env.REACT_APP_OPENSHIFT_HOSTNAME + '/students/delete-student/' + this.props.obj._id)
             .then((res) => {
                 console.log('Student successfully deleted!')
                 window.location.href = '/student-list'
