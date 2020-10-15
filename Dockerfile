@@ -13,7 +13,7 @@ RUN npm install
 
 COPY . ./
 
-RUN chown -R 1001:1001 /app
+RUN cd /app/backend && npm install & cd /app && chown -R 1001:1001 /app
 
 USER 1001
 
