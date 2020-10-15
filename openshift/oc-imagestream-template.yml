@@ -1,0 +1,8 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  labels:
+    app: brian-mernstack-build
+  name: mernstack-test
+  namespace: brian-test # Must be project name
+
